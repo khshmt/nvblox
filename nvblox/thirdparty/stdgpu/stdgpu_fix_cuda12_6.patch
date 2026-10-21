@@ -34,7 +34,7 @@ index 4445152..862b5c1 100644
  allocator_traits<Allocator>::construct([[maybe_unused]] Allocator& a, T* p, Args&&... args)
  {
 -    construct_at(p, forward<Args>(args)...);
-+    construct_at(p, stdgpu::forward<Args>(args)...);
++    stdgpu::construct_at(p, stdgpu::forward<Args>(args)...);
  }
  
  template <typename Allocator>

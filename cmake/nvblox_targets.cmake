@@ -55,7 +55,7 @@ function(set_nvblox_compiler_options_internal target_name enable_warnings)
   set_target_properties(${target_name} PROPERTIES BUILD_RPATH_USE_ORIGIN on)
 
   # c++17 compilation. We use c++17 features.
-  add_host_compiler_option(${target_name} "-std=gnu++17")
+  add_host_compiler_option(${target_name} "-std=gnu++20")
 
   # ############################################################################
   # PREPROCESSOR DIRECTIVES

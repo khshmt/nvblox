@@ -1,0 +1,12 @@
+#!/bin/bash
+
+rm -rf build
+
+cmake -S . -B build -DCMAKE_CXX_STANDARD=20 -DCMAKE_CXX_STANDARD_REQUIRED=ON \
+  -DCMAKE_BUILD_TYPE=Release -DWARNING_AS_ERROR=ON -DBUILD_TESTING=ON \
+  -DBUILD_BENCHMARKS=ON -DBUILD_RENDERER=ON -DBUILD_PYTORCH_WRAPPER=ON \
+  -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+  -DTorch_DIR=/home/khshmt/LibTorch/libtorch-2.14.1-cu126/share/cmake/Torch
+  
+cmake --build build --parallel 4
+
